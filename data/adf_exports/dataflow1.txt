@@ -1,0 +1,16 @@
+source(useSchema: false,
+     allowSchemaDrift: true,
+     validateSchema: false,
+     ignoreNoFilesFound: false,
+     format: 'delimited',
+     fileSystem: 'msexports',
+     folderPath: 'focuscost/focus/must-focus-cost/20260401-20260430/8b451d18-4a38-4be1-b8a9-64fa666d531d',
+     fileName: 'manifest.json',
+     columnDelimiter: ',',
+     escapeChar: '\\',
+     quoteChar: '\"',
+     columnNamesAsHeader: false) ~> source1
+source1 sink(allowSchemaDrift: true,
+     validateSchema: false,
+     skipDuplicateMapInputs: true,
+     skipDuplicateMapOutputs: true) ~> sink1
